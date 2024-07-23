@@ -12,9 +12,15 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
       <router-link to="categorias">
         <i class="icon mdi mdi-view-grid-outline" /> Categorias
       </router-link>
-      <router-link :to="{ name: 'marca' }">Marca</router-link>
-      <router-link :to="{ name: 'acessorio' }">Acessorio</router-link> 
-      <router-link :to="{ name: 'cor' }">Cor</router-link> 
+      <router-link :to="{ name: 'marca' }">
+        <i class="mdi mdi-car-convertible"/> Marca
+      </router-link>
+      <router-link :to="{ name: 'acessorio' }">  
+         <i class="mdi mdi-star-four-points"/>Acessorio
+         </router-link> 
+      <router-link :to="{ name: 'cor' }">
+        <i class="mdi mdi-spray"/>Cor
+        </router-link> 
      
       <!-- <div v-if="authStore.loggedIn">
     <router-link  to="/logout">Logout</router-link> |
@@ -28,12 +34,7 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
     </div>
     <div class="divider" />
     <div class="menu">
-      <router-link to="/">
-        <i class="icon mdi mdi-account-circle-outline" /> Perfil
-      </router-link>
-      <router-link to="/">
-        <i class="icon mdi mdi-cart-outline" /> Carrinho
-      </router-link>
+   
       <router-link to="/login">
         <i class="icon mdi mdi-account" /> Login
       </router-link>
@@ -69,4 +70,4 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   font-size: 1.3rem;
   margin-top: 2.2rem;
 }
-</style>
+</style>      

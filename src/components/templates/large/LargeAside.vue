@@ -2,19 +2,47 @@
 import LogoTitle from '@/components/templates/LogoTitle.vue';
 </script>
 <template>
-  <header>
-    
-    <router-link :to="{ name: 'home' }">Home</router-link> |
-    <router-link to="/categorias">Categorias</router-link> |
-    <router-link :to="{ name: 'cor' }">Cor</router-link> |
-    <router-link :to="{ name: 'marca' }">Marca</router-link> |
-    <router-link :to="{ name: 'acessorio' }">Acessorio</router-link> |
-    <div v-if="authStore.loggedIn">
+  <div class="logo_and_menu">
+    <logo-title class="mb-2" />
+    <div class="divider" />
+    <div class="menu">
+      <router-link to="/">
+        <i class="icon mdi mdi-home-outline" /> Home
+      </router-link>
+      <router-link to="categorias">
+        <i class="icon mdi mdi-view-grid-outline" /> Categorias
+      </router-link>
+      <router-link :to="{ name: 'marca' }">
+        <i class="mdi mdi-car-convertible"/> Marca
+      </router-link>
+      <router-link :to="{ name: 'acessorio' }">  
+         <i class="mdi mdi-star-four-points"/>Acessorio
+         </router-link> 
+      <router-link :to="{ name: 'cor' }">
+        <i class="mdi mdi-spray"/>Cor
+        </router-link> 
+      <!-- <div v-if="authStore.loggedIn">
     <router-link  to="/logout">Logout</router-link> |
       {{ authStore.user.email }}
     </div>
-    <router-link v-else to="/login">Login</router-link>
-  </header>
+    <router-link v-else to="/login">
+        <i class="icon mdi mdi-account" /> Login
+    </router-link> -->
+
+   
+    </div>
+    <div class="divider" />
+    <div class="menu">
+   
+      <router-link to="/login">
+        <i class="icon mdi mdi-account" /> Login
+      </router-link>
+       <div>
+
+   
+  </div>
+    </div>
+  </div>
   <logo-title />
 </template>
 <style scoped>
@@ -45,4 +73,4 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   font-size: 1.3rem;
   margin-top: 2.2rem;
 }
-</style>
+</style>      

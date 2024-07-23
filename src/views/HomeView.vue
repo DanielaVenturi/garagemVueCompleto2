@@ -27,6 +27,6 @@ onMounted(() => {
 
 <template>
   <product-list />
-  <h1>Loja Virtual</h1>
+  <h1>Garage</h1>
 
 </template>

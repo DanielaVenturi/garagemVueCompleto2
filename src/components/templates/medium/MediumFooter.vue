@@ -1,63 +1,34 @@
 <script setup></script>
 <template>
+  <div class="links">
+    <RouterLink to="/">Help</RouterLink>
+    <RouterLink to="/">Contact Us</RouterLink>
+    <RouterLink to="/">Privacy & Terms</RouterLink>
+  </div>
   <div class="icons">
-    <RouterLink to="/">
-      <i class="mdi mdi-home-outline" />
-      Home
-    </RouterLink>
-    <RouterLink to="/">
-      <i class="mdi mdi-account-circle-outline" />
-      Perfil
-    </RouterLink>
-    <RouterLink to="/">
-      <i class="mdi mdi-cart-outline" />
-      Carrinho
-    </RouterLink>
-    <RouterLink to="/">
-      <i class="mdi mdi-menu" />
-      Menu
-    </RouterLink>
+    <i class="mdi mdi-facebook" />
+    <i class="mdi mdi-twitter" />
+    <i class="mdi mdi-instagram" />
   </div>
 </template>
 <style scoped>
-#footerMenu {
-  position: fixed;
-  bottom: 15%;
-  right: 0;
-
-  width: 20%;
-  border-top: #eeeeee 1px solid;
-  background-color: white;
-
-  display: block;
-  padding: 1rem;
+.links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 4rem;
+  font-size: 1.2rem;
+  color: #000;
 }
 
-#footerMenu a {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+.links a {
   text-decoration: none;
-  color: #282828;
-  font-size: 1rem;
-  transition: color 0.3s;
 }
 
 .icons {
+  padding-right: 3rem;
   display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 1.7rem;
-}
-
-.icons a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #282828;
-  font-size: 1rem;
-  transition: color 0.3s;
+  gap: 4rem;
+  font-size: 2.2rem;
 }
 </style>
