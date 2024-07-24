@@ -4,13 +4,13 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
 
 <template>
   <logo-title class="pl-0" />
-  <div class="icons">
+  <!-- <div class="icons">
     <i class="mdi mdi-magnify" />
-  </div>
+  </div> -->
 </template>
 
 <style scoped>
-.pl-0 {
+/* .pl-0 {
   padding-left: 0rem;
 }
 
@@ -19,5 +19,5 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   gap: 1rem;
   align-items: center;
   font-size: 1.7rem;
-}
+} */
 </style>

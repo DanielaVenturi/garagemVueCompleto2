@@ -10,33 +10,31 @@ onBeforeRouteUpdate(() => {
 </script>
 <template>
   <div id="footerMenu" :style="{ display: showMenu ? 'block' : 'none' }">
-    <RouterLink to="/">
-      <i class="mdi mdi-home-outline" />
-      Home
-    </RouterLink>
-    <RouterLink to="/login">
-      <i class="mdi mdi-account" />
-      Login
-    </RouterLink>
+      <router-link to="categorias">
+        <i class="icon mdi mdi-view-grid-outline" /> Categorias
+      </router-link>
+      <router-link :to="{ name: 'marca' }">
+        <i class="mdi mdi-car-convertible"/> Marca
+      </router-link>
+      <router-link :to="{ name: 'acessorio' }">  
+         <i class="mdi mdi-star-four-points"/>Acessorio
+         </router-link> 
+      <router-link :to="{ name: 'cor' }">
+        <i class="mdi mdi-spray"/>Cor
+        </router-link> 
   </div>
   <div class="icons">
-    <RouterLink to="/">
-      <i class="mdi mdi-home-outline" />
-      Home
-    </RouterLink>
-    <RouterLink to="/">
-      <i class="mdi mdi-account-circle-outline" />
-      Perfil
-    </RouterLink>
-    <RouterLink to="/">
-      <i class="mdi mdi-cart-outline" />
-      Carrinho
-    </RouterLink>
-
+    <router-link to="/">
+        <i class="icon mdi mdi-home-outline" /> Home
+      </router-link>
+      <router-link to="/login">
+        <i class="mdi mdi-account-circle-outline" /> Login
+      </router-link>
     <div class="hamburger" @click="showMenu = !showMenu">
       <i class="mdi mdi-menu" />
       Menu
     </div>
+    
   </div>
 </template>
 <style scoped>
