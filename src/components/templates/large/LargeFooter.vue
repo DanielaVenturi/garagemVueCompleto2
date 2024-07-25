@@ -30,5 +30,6 @@
   display: flex;
   gap: 4rem;
   font-size: 2.2rem;
+  color: black;
 }
 </style>

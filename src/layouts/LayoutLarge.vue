@@ -37,10 +37,11 @@ header {
   justify-content: flex-end;
   padding: 1.5rem;
   grid-area: header;
+    background-color: #ccc;
 }
 
 aside {
-  border-right: #eeeeee 1px solid;
+  border-right: #ffffff 1px solid;
   box-shadow: 0 0 10px 0 #eeeeee;
   display: flex;
   flex-direction: column;
@@ -48,12 +49,14 @@ aside {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   grid-area: aside;
+  background-color: #ccc;
 }
 
 main {
   min-height: 80%;
   padding: 2rem;
   grid-area: main;
+  
 }
 
 footer {
@@ -61,7 +64,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 3rem;
-  background-color: #eeeeee;
+   background-color: #ccc;
   grid-area: footer;
 }
 </style>

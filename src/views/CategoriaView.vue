@@ -1,71 +1,81 @@
 <script setup>
-import { ref, reactive, onMounted } from "vue";
-import CategoriasApi from "@/api/categorias";
-const categoriasApi = new CategoriasApi();
+import { ref, reactive, onMounted } from 'vue'
+import CategoriasApi from '@/api/categorias'
+const categoriasApi = new CategoriasApi()
 
-const defaultCategoria = { id: null, descricao: "" };
-const categorias = ref([]);
-const categoria = reactive({ ...defaultCategoria });
+const defaultCategoria = { id: null, descricao: '' }
+const categorias = ref([])
+const categoria = reactive({ ...defaultCategoria })
 
 onMounted(async () => {
-  categorias.value = await categoriasApi.buscarTodasAsCategorias();
-});
+  categorias.value = await categoriasApi.buscarTodasAsCategorias()
+})
 
 function limpar() {
-  Object.assign(categoria, { ...defaultCategoria });
+  Object.assign(categoria, { ...defaultCategoria })
 }
 
 async function salvar() {
   if (categoria.id) {
-    await categoriasApi.atualizarCategoria(categoria);
+    await categoriasApi.atualizarCategoria(categoria)
   } else {
-    await categoriasApi.adicionarCategoria(categoria);
+    await categoriasApi.adicionarCategoria(categoria)
   }
-  categorias.value = await categoriasApi.buscarTodasAsCategorias();
-  limpar();
+  categorias.value = await categoriasApi.buscarTodasAsCategorias()
+  limpar()
 }
 
 function editar(categoria_para_editar) {
-  Object.assign(categoria, categoria_para_editar);
+  Object.assign(categoria, categoria_para_editar)
 }
 
 async function excluir(id) {
-  await categoriasApi.excluirCategoria(id);
-  categorias.value = await categoriasApi.buscarTodasAsCategorias();
-  limpar();
+  await categoriasApi.excluirCategoria(id)
+  categorias.value = await categoriasApi.buscarTodasAsCategorias()
+  limpar()
 }
 </script>
 
 <template>
-  <h1>Categoria</h1>
-  <hr />
-  <div class="form">
-    <input type="text" v-model="categoria.descricao" placeholder="Descrição" class="input-field" />
-    <button @click="salvar" class="btn">Salvar</button>
-    <button @click="limpar" class="btn">Limpar</button>
+  <h1 class="titulo-categoria">Categoria</h1>
+
+  <div class="categoria">
+    <div class="form-section">
+      <input
+        type="text"
+        v-model="categoria.descricao"
+        placeholder="Descrição"
+        class="input-field"
+      />
+      <button @click="salvar" class="btn salvar">Salvar</button>
+      <button @click="limpar" class="btn limpar">Limpar</button>
+    </div>
+
+    <div class="list-section">
+      <ul class="categoria-list">
+        <li v-for="categoria in categorias" :key="categoria.id" class="categoria-item">
+          <span @click="editar(categoria)" class="categoria-text">
+            ({{ categoria.id }}) - {{ categoria.descricao }} -
+          </span>
+          <button @click="excluir(categoria.id)" class="btn-delete">x</button>
+        </li>
+      </ul>
+    </div>
   </div>
-  <hr />
-  <ul class="categoria-list">
-    <li v-for="categoria in categorias" :key="categoria.id" class="categoria-item">
-      <span @click="editar(categoria)" class="categoria-text">
-        ({{ categoria.id }}) - {{ categoria.descricao }} -
-      </span>
-      <button @click="excluir(categoria.id)" class="btn-delete">x</button>
-    </li>
-  </ul>
 </template>
 
 <style>
-:root {
-  --primary-color: #4CAF50;
-  --primary-hover-color: #45a049;
-  --delete-color: #f44336;
-  --delete-hover-color: #d32f2f;
-  --background-color: #f9f9f9;
-  --hover-background-color: #f1f1f1;
-  --border-color: #ddd;
-  --text-color: #333;
-  --font-size: 16px;
+.categoria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-section,
+.list-section {
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 8px;
 }
 
 .input-field {
@@ -77,25 +87,38 @@ async function excluir(id) {
   border-radius: 4px;
   font-size: var(--font-size);
 }
-
+.titulo_categoria{
+  font-size: 24px;
+  text-align: center;
+}
 .btn {
   padding: 10px 20px;
   margin: 10px 5px;
-  background-color: var(--primary-color);
-  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: var(--font-size);
-  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: var(--primary-hover-color);
+.btn.salvar {
+  background-color: #000000;
+  color: white;
+}
+
+.btn.salvar:hover {
+  background-color: #817373;
+}
+
+.btn.limpar {
+  background-color: #000000;
+  color: white;
+}
+
+.btn.limpar:hover {
+  background-color: #817373;
 }
 
 .btn-delete {
-  background-color: var(--delete-color);
+  background-color: #0c0a0a;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -105,7 +128,7 @@ async function excluir(id) {
 }
 
 .btn-delete:hover {
-  background-color: var(--delete-hover-color);
+  background-color: #4b3433;
   transform: scale(1.1);
 }
 
@@ -134,16 +157,16 @@ async function excluir(id) {
 .categoria-text {
   flex-grow: 1;
   cursor: pointer;
-  color: var(--text-color);
+  color: #000000;
   font-size: var(--font-size);
   transition: color 0.3s ease;
 }
 
 .categoria-text:hover {
-  color: var(--primary-color);
+  color:#817373;;
 }
 
 .btn-delete {
   margin-left: 10px;
 }
-</style>  
+</style>

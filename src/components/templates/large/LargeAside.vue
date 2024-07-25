@@ -58,7 +58,7 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   gap: 1rem;
   font-size: 1.3rem;
   margin-top: 2.2rem;
