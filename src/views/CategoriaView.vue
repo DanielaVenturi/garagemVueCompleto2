@@ -87,7 +87,7 @@ async function excluir(id) {
   border-radius: 4px;
   background-color: aliceblue;
 }
-.titulo_categoria{
+.titulo-categoria{
   font-size: 24px;
   text-align: center;
 }

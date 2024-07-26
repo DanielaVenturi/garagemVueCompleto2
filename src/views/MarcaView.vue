@@ -38,7 +38,9 @@ async function excluir(id) {
 const nomeMaiusculo = computed(() => marca.nome.toUpperCase());
 </script>
 <template>
+<div class="titulo-marca">
   <h1>Marca</h1>
+</div>
   
  <div class="marca">
  <div class="form-section">
@@ -93,7 +95,10 @@ const nomeMaiusculo = computed(() => marca.nome.toUpperCase());
   border-radius: 4px;
   cursor: pointer;
 }
-
+.titulo-marca{
+  font-size: 15px;
+  text-align: center;
+}
 .btn.salvar {
   background-color: #000000;
   color: white;
