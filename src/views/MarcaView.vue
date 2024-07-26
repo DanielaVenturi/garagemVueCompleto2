@@ -1,23 +1,3 @@
-<template>
-  <h1>Marca</h1>
-  <hr />
-  <div class="form">
-    <input type="text" v-model="marca.nome" placeholder="nome" class="input-field" />
-    <input type="text" v-model="marca.nacionalidade" placeholder="nacionalidade" class="input-field" />
-    <button @click="salvar" class="btn">Salvar</button>
-    <button @click="limpar" class="btn">Limpar</button>
-  </div>
-  <hr />
-  <ul class="marca-list">
-    <li v-for="marca in marcas" :key="marca.id" class="marca-item">
-      <span @click="editar(marca)" class="marca-text">
-        ({{ marca.id }}) - {{ marca.nome.toUpperCase() }} - {{ marca.nacionalidade }}
-      </span>
-      <button @click="excluir(marca.id)" class="btn-delete">x</button>
-    </li>
-  </ul>
-</template>
-
 <script setup>
 import { ref, reactive, onMounted, computed } from "vue";
 import MarcaApi from "@/api/marca";
@@ -57,20 +37,45 @@ async function excluir(id) {
 
 const nomeMaiusculo = computed(() => marca.nome.toUpperCase());
 </script>
+<template>
+  <h1>Marca</h1>
+  
+ <div class="marca">
+ <div class="form-section">
+    <div class="form">
+    <input type="text" v-model="marca.nome" placeholder="nome" class="input-field" />
+    <input type="text" v-model="marca.nacionalidade" placeholder="nacionalidade" class="input-field" />
+    <button @click="salvar" class="btn salvar">Salvar</button>
+    <button @click="limpar" class="btn limpar">Limpar</button>
+  </div>
+ </div>
+<div class="list-section">
+  <ul class="marca-list">
+    <li v-for="marca in marcas" :key="marca.id" class="marca-item">
+      <span @click="editar(marca)" class="marca-text">
+        ({{ marca.id }}) - {{ marca.nome.toUpperCase() }} - {{ marca.nacionalidade }}
+      </span>
+      <button @click="excluir(marca.id)" class="btn-delete">x</button>
+    </li>
+  </ul>
+</div>
+ </div>
+</template>
 
-<style>
-:root {
-  --primary-color: #4CAF50;
-  --primary-hover-color: #45a049;
-  --delete-color: #f44336;
-  --delete-hover-color: #d32f2f;
-  --background-color: #f9f9f9;
-  --hover-background-color: #f1f1f1;
-  --border-color: #ddd;
-  --text-color: #333;
-  --font-size: 16px;
+
+
+<style scoped>
+.marca{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-
+.form-section,
+.list-section {
+  padding: 20px;
+  background-color: #ccc;
+  border-radius: 8px;
+}
 .input-field {
   width: 100%;
   padding: 10px;
@@ -78,27 +83,37 @@ const nomeMaiusculo = computed(() => marca.nome.toUpperCase());
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  font-size: var(--font-size);
+  background-color: aliceblue;
 }
 
 .btn {
   padding: 10px 20px;
   margin: 10px 5px;
-  background-color: var(--primary-color);
-  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: var(--font-size);
-  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: var(--primary-hover-color);
+.btn.salvar {
+  background-color: #000000;
+  color: white;
+}
+
+.btn.salvar:hover {
+  background-color: #365a33;
+}
+
+.btn.limpar {
+  background-color: #000000;
+  color: white;
+}
+
+.btn.limpar:hover {
+  background-color: #817373;
 }
 
 .btn-delete {
-  background-color: var(--delete-color);
+  background-color: #0c0a0a;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -108,13 +123,14 @@ const nomeMaiusculo = computed(() => marca.nome.toUpperCase());
 }
 
 .btn-delete:hover {
-  background-color: var(--delete-hover-color);
+  background-color: #4b3433;
   transform: scale(1.1);
 }
 
 .marca-list {
   list-style-type: none;
   padding: 0;
+  
 }
 
 .marca-item {
@@ -135,18 +151,44 @@ const nomeMaiusculo = computed(() => marca.nome.toUpperCase());
 }
 
 .marca-text {
-  flex-grow: 1;
+    flex-grow: 1;
   cursor: pointer;
-  color: var(--text-color);
+  color: #000000;
   font-size: var(--font-size);
-  transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    background-color: aliceblue;
+    border-radius: 4px;
+    padding: 10px;
+
 }
 
 .marca-text:hover {
-  color: var(--primary-color);
+   color:#817373;
 }
 
 .btn-delete {
   margin-left: 10px;
+}
+@media (max-width: 978px) {
+  .marca {
+    grid-template-columns: 1fr ;
+    width: 90%;
+  }
+  .btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .input-field {
+    font-size: 14px;
+  }
+  .titulo_categoria {
+    font-size: 20px;
+  }
+} 
+@media (max-width:820px) {
+  .categoria{
+    grid-template-columns: 1fr;
+    width: 75%;
+  }
 }
 </style>

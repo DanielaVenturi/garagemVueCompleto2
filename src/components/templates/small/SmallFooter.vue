@@ -40,10 +40,10 @@ onBeforeRouteUpdate(() => {
 <style scoped>
 #footerMenu {
     position: fixed;
-    bottom: 15%;
-    right: 0;
+    bottom: 10%;
+    right: 0%;
 
-    width: 20%;
+    width: 50%;
     border-top: #EEEEEE 1px solid;
     background-color: white;
 
@@ -73,9 +73,7 @@ onBeforeRouteUpdate(() => {
 .icons .hamburger {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #282828;
+    color: #ffffff;
     font-size: 1rem;
     transition: color 0.3s;
 }

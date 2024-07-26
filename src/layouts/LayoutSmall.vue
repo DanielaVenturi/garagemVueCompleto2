@@ -28,7 +28,7 @@ header {
   justify-content: space-between;
   padding: 1.5rem;
   border-bottom: #eeeeee 2px solid;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
 
   z-index: 10;
   position: fixed;
@@ -56,7 +56,7 @@ footer {
   box-shadow: 0 0 10px 0 #eeeeee;
   padding: 1.5rem;
   margin-top: auto;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
 
   position: fixed;
   left: 0;

@@ -5,11 +5,7 @@
     <RouterLink to="/">Contact Us</RouterLink>
     <RouterLink to="/">Privacy & Terms</RouterLink>
   </div>
-  <div class="icons">
-    <i class="mdi mdi-facebook" />
-    <i class="mdi mdi-twitter" />
-    <i class="mdi mdi-instagram" />
-  </div>
+ 
 </template>
 <style scoped>
 .links {
@@ -23,6 +19,7 @@
 
 .links a {
   text-decoration: none;
+  color: #ffffff;
 }
 
 .icons {
@@ -31,4 +28,5 @@
   gap: 4rem;
   font-size: 2.2rem;
 }
+
 </style>

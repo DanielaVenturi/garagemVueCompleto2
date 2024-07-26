@@ -5,22 +5,27 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   <div class="logo_and_menu">
     <logo-title class="mb-2" />
     <div class="divider" />
-    <div class="menu">
+     <div class="menu">
       <router-link to="/">
         <i class="icon mdi mdi-home-outline" /> Home
       </router-link>
+      <hr>
       <router-link to="categorias">
         <i class="icon mdi mdi-view-grid-outline" /> Categorias
       </router-link>
+      <hr>
       <router-link :to="{ name: 'marca' }">
         <i class="mdi mdi-car-convertible"/> Marca
       </router-link>
+      <hr>
       <router-link :to="{ name: 'acessorio' }">  
          <i class="mdi mdi-star-four-points"/>Acessorio
          </router-link> 
+         <hr>
       <router-link :to="{ name: 'cor' }">
         <i class="mdi mdi-spray"/>Cor
         </router-link> 
+        <hr>
      
       <!-- <div v-if="authStore.loggedIn">
     <router-link  to="/logout">Logout</router-link> |
@@ -38,6 +43,11 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
       <router-link to="/login">
         <i class="icon mdi mdi-account" /> Login
       </router-link>
+       <div class="icons">
+    <i class="mdi mdi-facebook" />
+    <i class="mdi mdi-twitter" />
+    <i class="mdi mdi-instagram" />
+  </div>
     </div>
   </div>
   <logo-title />
@@ -45,6 +55,13 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
 <style scoped>
 .mb-2 {
   margin-bottom: 1.5rem;
+}
+.icons {
+  display: flex;
+  gap: 1rem;
+ color: #eeeeee;
+  font-size: 3rem;
+ 
 }
 
 .icon {

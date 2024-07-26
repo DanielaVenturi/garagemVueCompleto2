@@ -9,18 +9,23 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
       <router-link to="/">
         <i class="icon mdi mdi-home-outline" /> Home
       </router-link>
+      <hr>
       <router-link to="categorias">
         <i class="icon mdi mdi-view-grid-outline" /> Categorias
       </router-link>
+      <hr>
       <router-link :to="{ name: 'marca' }">
         <i class="mdi mdi-car-convertible"/> Marca
       </router-link>
+      <hr>
       <router-link :to="{ name: 'acessorio' }">  
          <i class="mdi mdi-star-four-points"/>Acessorio
          </router-link> 
+         <hr>
       <router-link :to="{ name: 'cor' }">
         <i class="mdi mdi-spray"/>Cor
         </router-link> 
+        <hr>
       <!-- <div v-if="authStore.loggedIn">
     <router-link  to="/logout">Logout</router-link> |
       {{ authStore.user.email }}
@@ -38,6 +43,13 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
 <style scoped>
 .mb-2 {
   margin-bottom: 1.5rem;
+}
+.icons {
+  display: flex;
+  gap: 1rem;
+ color: #eeeeee;
+  font-size: 3rem;
+ 
 }
 
 .icon {
@@ -58,7 +70,7 @@ import LogoTitle from '@/components/templates/LogoTitle.vue';
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   gap: 1rem;
   font-size: 1.3rem;
   margin-top: 2.2rem;

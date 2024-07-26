@@ -85,7 +85,7 @@ async function excluir(id) {
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
-  font-size: var(--font-size);
+  background-color: aliceblue;
 }
 .titulo_categoria{
   font-size: 24px;
@@ -105,7 +105,7 @@ async function excluir(id) {
 }
 
 .btn.salvar:hover {
-  background-color: #817373;
+  background-color: #365a33;
 }
 
 .btn.limpar {
@@ -155,18 +155,40 @@ async function excluir(id) {
 }
 
 .categoria-text {
-  flex-grow: 1;
+ flex-grow: 1;
   cursor: pointer;
   color: #000000;
   font-size: var(--font-size);
-  transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    background-color: aliceblue;
+    border-radius: 4px;
+    padding: 10px;
 }
 
 .categoria-text:hover {
-  color:#817373;;
+  color:#817373;
 }
 
 .btn-delete {
   margin-left: 10px;
 }
+
+@media (max-width: 978px) {
+  .categoria {
+    grid-template-columns: 1fr ;
+    width: 90%;
+  }
+  .btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+  .input-field {
+    font-size: 14px;
+  }
+  .titulo_categoria {
+    font-size: 20px;
+  }
+} 
+
 </style>
+
